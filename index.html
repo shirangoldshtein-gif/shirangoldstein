@@ -172,6 +172,15 @@
       margin-bottom: 1rem;
       line-height: 1;
     }
+    .hero-logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      top: -1.5rem;
+    }
+    .hero-text-block { display: contents; }
     .hero-script {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(3.5rem, 6vw, 5.5rem);
@@ -557,9 +566,11 @@
     @media (max-width: 860px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-visual { height: 65vw; min-height: 300px; order: 2; }
-      .hero-content { padding: 3rem 2rem; order: 1; }
+      .hero { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+      .hero-logo-block { order: 1; }
+      .hero-visual { height: 75vw; min-height: 300px; order: 2; width: 100%; }
+      .hero-text-block { order: 3; padding: 2rem; }
+      .hero-content { padding: 0; display: flex; flex-direction: column; }
       .about-inner { grid-template-columns: 1fr; gap: 3rem; }
       .about-photo::before, .about-photo::after { display: none; }
       .gallery-grid { height: auto; grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
@@ -608,25 +619,27 @@
 
     <!-- טקסט ימין -->
     <div class="hero-content">
-      <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:1.5rem;position:relative;top:-1.5rem;">
+      <div class="hero-logo-block">
         <img src="images/logo.png" alt="שירן גולדשטיין" style="height:180px;width:auto;object-fit:contain;display:block;margin-bottom:0;" />
         <p class="hero-eyebrow" style="margin:0;text-align:center;">עיצוב שמלות לכלות שחולמות</p>
       </div>
-      <div class="hero-script">הגענו לצפון</div>
-      <h1 class="hero-title">
-        כבר לא צריך לנסוע<br/>עד המרכז
-      </h1>
-      <p class="hero-desc">
-        שמלת הכלה שחלמת עליה מחכה לך קרוב לבית.
-        סטודיו שירן גולדשטיין עבר לקריית מוצקין —
-        כי כל כלה מגיעה לחוויה אינטימית, מוקפדת ובלתי נשכחת.
-      </p>
-      <a class="hero-cta" href="https://wa.me/972546404216?text=היי%20שירן%2C%20אשמח%20לקבוע%20תור%20לניסיון%20שמלה" target="_blank">
-        קביעת תור ← וואטסאפ
-      </a>
-      <p class="hero-location">
-        <strong>ויצמן 78</strong>, קריית מוצקין &nbsp;·&nbsp; <strong>054-640-4216</strong>
-      </p>
+      <div class="hero-text-block">
+        <div class="hero-script">הגענו לצפון</div>
+        <h1 class="hero-title">
+          כבר לא צריך לנסוע<br/>עד המרכז
+        </h1>
+        <p class="hero-desc">
+          שמלת הכלה שחלמת עליה מחכה לך קרוב לבית.
+          סטודיו שירן גולדשטיין עבר לקריית מוצקין —
+          כי כל כלה מגיעה לחוויה אינטימית, מוקפדת ובלתי נשכחת.
+        </p>
+        <a class="hero-cta" href="https://wa.me/972546404216?text=היי%20שירן%2C%20אשמח%20לקבוע%20תור%20לניסיון%20שמלה" target="_blank">
+          קביעת תור ← וואטסאפ
+        </a>
+        <p class="hero-location">
+          <strong>ויצמן 78</strong>, קריית מוצקין &nbsp;·&nbsp; <strong>054-640-4216</strong>
+        </p>
+      </div>
     </div>
   </section>
 
