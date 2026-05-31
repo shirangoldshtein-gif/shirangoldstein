@@ -73,7 +73,8 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      margin-left: 2rem;
+      margin-right: auto;
+      padding-right: 2rem;
     }
     .nav-brand-logo {
       height: 42px;
@@ -568,9 +569,8 @@
       .hero-content { padding: 2rem; }
       .about-inner { grid-template-columns: 1fr; gap: 3rem; }
       .about-photo::before, .about-photo::after { display: none; }
-      .gallery-grid { height: auto; grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-      .g-item:first-child { grid-row: span 1; aspect-ratio: 3/4; }
-      .g-item { aspect-ratio: 3/4; }
+      .gallery-grid { height: auto; grid-template-columns: 1fr; grid-template-rows: auto; }
+      .g-item, .g-item.portrait, .g-item.landscape { aspect-ratio: 4/3; grid-row: span 1; width: 100%; }
       .services-grid { grid-template-columns: 1fr; gap: 2px; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     }
