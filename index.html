@@ -74,7 +74,7 @@
       align-items: center;
       gap: 0.6rem;
       margin-right: auto;
-      padding-right: 2rem;
+      padding-right: 1rem;
     }
     .nav-brand-logo {
       height: 42px;
@@ -562,15 +562,18 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
-      nav { padding: 1rem 1.5rem; }
+      nav { padding: 0.8rem 1.2rem; }
       .nav-links { display: none; }
+      .nav-brand-text { display: none; }
       .hero { grid-template-columns: 1fr; }
       .hero-visual { height: 75vw; min-height: 300px; }
       .hero-content { padding: 2rem; }
       .about-inner { grid-template-columns: 1fr; gap: 3rem; }
       .about-photo::before, .about-photo::after { display: none; }
-      .gallery-grid { height: auto; grid-template-columns: 1fr; grid-template-rows: auto; }
-      .g-item, .g-item.portrait, .g-item.landscape { aspect-ratio: 4/3; grid-row: span 1; width: 100%; }
+      .gallery-grid { height: auto; grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .g-item { aspect-ratio: 3/4; grid-row: span 1; }
+      .g-item.portrait { aspect-ratio: 3/4; }
+      .g-item.landscape { aspect-ratio: 3/4; }
       .services-grid { grid-template-columns: 1fr; gap: 2px; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     }
