@@ -333,6 +333,64 @@
     }
     .g-item:hover::after { background: rgba(44,32,24,0.08); }
 
+    /* ── BRIDES ── */
+    .brides-section { background: #fff; padding: 6rem 2rem; }
+    .brides-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 10px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .b-item {
+      position: relative;
+      overflow: hidden;
+      background: #ede3da;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+    }
+    .b-item img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .b-item:hover img { transform: scale(1.05); }
+    .b-item .drop-hint {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: #c0b0a0; font-size: 0.75rem; letter-spacing: 0.08em;
+    }
+    .b-item::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(44,32,24,0);
+      transition: background 0.3s;
+      pointer-events: none;
+    }
+    .b-item:hover::after { background: rgba(44,32,24,0.06); }
+    @media (max-width: 860px) {
+      .brides-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── INSTAGRAM STRIP ── */
+    .insta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      padding: 1.1rem 2rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .insta-strip:hover { opacity: 0.9; }
+
     /* ── ABOUT ── */
     .about {
       padding: 7rem 2rem;
@@ -490,6 +548,55 @@
     }
     .cta-btn:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
 
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--ivory); padding: 6rem 2rem; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .testi-card {
+      background: #fff;
+      border: 1px solid rgba(184,149,90,0.15);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: border-color 0.2s;
+    }
+    .testi-card:hover { border-color: var(--gold-lt); }
+    .testi-featured {
+      grid-column: span 2;
+      background: var(--blush);
+      border-color: rgba(184,149,90,0.25);
+    }
+    .testi-stars {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+    }
+    .testi-text {
+      font-family: 'Assistant', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+    .testi-featured .testi-text { font-size: 1rem; }
+    .testi-author {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-top: auto;
+    }
+    @media (max-width: 860px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .testi-featured { grid-column: span 1; }
+    }
+
     /* ── CONTACT ── */
     .contact { padding: 7rem 2rem; background: #fff; }
     .contact-inner {
@@ -596,7 +703,6 @@
     <!-- לוגו + כיתוב — שמאל -->
     <div class="nav-brand">
       <img src="images/logo.png" alt="שירן גולדשטיין" class="nav-brand-logo" />
-      <span class="nav-brand-text">עיצוב שמלות לכלות שחולמות</span>
     </div>
   </nav>
 
@@ -620,8 +726,9 @@
       <div class="hero-script">הגענו לצפון</div>
       <p class="hero-desc">
         שמלת הכלה שחלמת עליה מחכה לך קרוב לבית.
-        סטודיו שירן גולדשטיין עבר לקריית מוצקין —
-        כי כל כלה מגיעה לחוויה אינטימית, מוקפדת ובלתי נשכחת.
+        סטודיו שירן גולדשטיין עבר לקריית מוצקין -
+        כי כל כלה מגיעה לחוויה אינטימית, מוקפדת ובלתי נשכחת,
+        עם יחס אישי וליווי צמוד לאורך כל התהליך.
       </p>
       <a class="hero-cta" href="https://wa.me/972546404216?text=היי%20שירן%2C%20אשמח%20לקבוע%20תור%20לניסיון%20שמלה" target="_blank">
         קביעת תור ← וואטסאפ
@@ -668,6 +775,33 @@
       </div>
     </div>
   </section>
+
+  <!-- BRIDES -->
+  <section class="brides-section" id="brides">
+    <div class="section-header">
+      <div class="section-eyebrow">הכלות שלי</div>
+      <div class="section-title">רגעים אמיתיים</div>
+      <div class="orn-line"><div class="orn-diamond"></div></div>
+    </div>
+    <div class="brides-grid">
+      <div class="b-item" id="b1"><img src="images/bride-1.jpg" onload="this.nextElementSibling&&(this.nextElementSibling.style.display='none')" onerror="this.style.display='none'" alt=""/><div class="drop-hint"><span>bride-1.jpg</span></div></div>
+      <div class="b-item" id="b2"><img src="images/bride-2.jpg" onload="this.nextElementSibling&&(this.nextElementSibling.style.display='none')" onerror="this.style.display='none'" alt=""/><div class="drop-hint"><span>bride-2.jpg</span></div></div>
+      <div class="b-item" id="b3"><img src="images/bride-3.jpg" onload="this.nextElementSibling&&(this.nextElementSibling.style.display='none')" onerror="this.style.display='none'" alt=""/><div class="drop-hint"><span>bride-3.jpg</span></div></div>
+      <div class="b-item" id="b4"><img src="images/bride-4.jpg" onload="this.nextElementSibling&&(this.nextElementSibling.style.display='none')" onerror="this.style.display='none'" alt=""/><div class="drop-hint"><span>bride-4.jpg</span></div></div>
+      <div class="b-item" id="b5"><img src="images/bride-5.jpg" onload="this.nextElementSibling&&(this.nextElementSibling.style.display='none')" onerror="this.style.display='none'" alt=""/><div class="drop-hint"><span>bride-5.jpg</span></div></div>
+      <div class="b-item" id="b6"><img src="images/bride-6.jpg" onload="this.nextElementSibling&&(this.nextElementSibling.style.display='none')" onerror="this.style.display='none'" alt=""/><div class="drop-hint"><span>bride-6.jpg</span></div></div>
+      <div class="b-item" id="b7"><img src="images/bride-7.jpg" onload="this.nextElementSibling&&(this.nextElementSibling.style.display='none')" onerror="this.style.display='none'" alt=""/><div class="drop-hint"><span>bride-7.jpg</span></div></div>
+      <div class="b-item" id="b8"><img src="images/bride-8.jpg" onload="this.nextElementSibling&&(this.nextElementSibling.style.display='none')" onerror="this.style.display='none'" alt=""/><div class="drop-hint"><span>bride-8.jpg</span></div></div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <a class="insta-strip" href="https://instagram.com/shirangoldstein.bridal" target="_blank">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    </svg>
+    עקבי אחרינו באינסטגרם &nbsp;@shirangoldstein.bridal
+  </a>
 
   <!-- ABOUT -->
   <section class="about" id="about">
@@ -721,6 +855,63 @@
         <div class="service-ornament">✦</div>
         <h3>ליווי אישי</h3>
         <p>מהתור הראשון ועד יום החתונה — ליווי חם, סבלני ומלא אהבה שיגרום לך להרגיש בטוחה ויפה.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">מה אומרות הכלות</div>
+        <div class="section-title">המלצות</div>
+        <div class="orn-line"><div class="orn-diamond"></div></div>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testi-card testi-featured">
+          <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="testi-text">
+            "התחתנו באוקטובר האחרון והרגשתי הזמן לחזור קצת לקבוצה המדהימה הזו שכל כך עזרה לי עם המלצת זהב ותופרת השמלות הכי מוכשרת שיש - שירן גולדשטיין 😍
+            כשהתחלתי את המסע לחפש את שמלת החלומות שלי, הייתי בכמה וכמה סלוני שמלות כלה ולא תיארתי לעצמי שאפגוש מעצבת כל כך מיוחדת. מהפגישה הראשונה ועד הרגע שבו לבשתי את השמלה ביום שלי, הרגשתי עטופה בחום, מקצועיות ואכפתיות.
+            שירן לא רק עיצבה את שמלת החלומות שלי - כזו שהרגשתי בה כמו נסיכה - אלא היא גם העניקה לי יחס אישי ואמיתי, היא הקשיבה לכל בקשה, לכל רעיון, וידעה להפוך את החלום שלי למציאות מדויקת. היא מעצבת כל כך מוכשרת מהפרטים הקטנים של ההתאמה לגזרה, הבד המיוחד, העיטורים המדויקים... כל פרט הראה את הכישרון האדיר שלה והכי חשוב בעיניי הוא שלאורך כל הדרך היא נתנה לי תחושה של רוגע ושלוה, והפכה את כל החוויה הזו למיוחדת במינה.
+            אז באמת אם אתן מחפשות מעצבת שמלות כלה שהיא לא רק מקצועית אלא גם מלאת לב, אני ממליצה עליה מכל הלב ❤️❤️"
+          </p>
+          <div class="testi-author">— לירון בכר דסקלו</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="testi-text">
+            "שירניי אהובה שלי ❤️ מתחילים קצת לעכל את מה שהלך אתמול, הייתי חייבת לעצור להגיד לך תודה ענקית! לא יכולה לתאר לך את כמות המחמאות שקיבלתי על השמלות אבל יותר מזה - כמה הרגשתי בהן כל כך נשית ויפה - באמת יצאו מתוך החלומות שלי. אפילו עמית (בעל 0 חוש אופנה יש לציין) התלהב מהן ממש ואמר שהן "עדינות קלאסיות ויפות" ואני מצטטת 😊 בקיצור, תודה על הסבלנות ועל כל המדידות והשינויים — הכל היה שווה את זה!! תהיי בטוחה שאמליץ עלייך בכל מקום אפשרי, הכי מגיע לך בעולם ❤️❤️❤️❤️"
+          </p>
+          <div class="testi-author">— תמר ❤️</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="testi-text">
+            "שירן את היית כל כך נהדרת. לי כאמא, זו הייתה ממש חוויה נעימה. להגיע עם עדן לבחירת שמלת כלה ובהמשך למדידות — וכל מפגש איתך היה מלא בכל כך הרבה סבלנות ונעימות ובעיקר המון הקשבה לכלה ורצון להגשים לה את חלום שמלת הכלה, בדיוק כמו שהיא רואה אותה 🌺 את מקסימה של ממש, מוכשרת, יצירתית."
+          </p>
+          <div class="testi-author">— אמא של כלה מאושרת 🌺</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="testi-text">
+            "עכשיו שקצת התאוששתי מהחתונה רציתי להגיד לך תודה רבה! השמלה הייתה מושלמת וקיבלתי עליה מלא מחמאות שאני נראית כמו נסיכה 😍 תודה רבה על כל ההשקעה, העבודה הקשה, ושהיית שם להקשיב ולקבל כל הערה, טענה או גחמה שהייתה לי. את היית בחירה מצוינת ואני אמליץ עלייך בחום! ❤️❤️ נשיקות רב!"
+          </p>
+          <div class="testi-author">— הלית ❤️</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+          <p class="testi-text">
+            "את מושלמת! העבודה איתך הייתה כ״כ כייפית ומרגיעה. את חלום של כל כלה! השמלה יצאה מהממת ברמות, וקיבלתי עליה אינספור מחמאות. כ״כ נהניתי איתה, שאפילו לרגע לא חשבתי להחליף לבגד שני — היא גרמה לי להרגיש סופר מיוחדת, והכל בזכותך!! 💜💜💜"
+          </p>
+          <div class="testi-author">— עדן 💜</div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -812,7 +1003,7 @@
     });
 
     // Drag & drop image replacement for all drop zones
-    const dropZones = ['hero-img','g1','g2','g3','g4','about-img'];
+    const dropZones = ['hero-img','g1','g2','g3','g4','about-img','b1','b2','b3','b4','b5','b6','b7','b8'];
 
     dropZones.forEach(id => {
       const wrap = document.getElementById(id);
