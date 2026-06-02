@@ -265,8 +265,8 @@
     }
 
     /* ── GALLERY ── */
-    .gallery { background: #fff; padding: 6rem 2rem; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .gallery { background: #fff; padding: 4rem 2rem 2rem; }
+    .section-header { text-align: center; margin-bottom: 2rem; }
     .section-eyebrow {
       font-size: 0.68rem;
       letter-spacing: 0.28em;
@@ -345,7 +345,7 @@
     .g-item:hover::after { background: rgba(44,32,24,0.08); }
 
     /* ── BRIDES ── */
-    .brides-section { background: #fff; padding: 6rem 2rem; }
+    .brides-section { background: #fff; padding: 2rem 2rem 4rem; }
     .brides-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -404,7 +404,7 @@
 
     /* ── ABOUT ── */
     .about {
-      padding: 7rem 2rem;
+      padding: 4rem 2rem;
       background: var(--ivory);
     }
     .about-inner {
@@ -476,7 +476,7 @@
     /* ── SERVICES ── */
     .services {
       background: var(--blush);
-      padding: 6rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
     }
     .services-grid {
@@ -517,7 +517,7 @@
     /* ── CTA ── */
     .cta-section {
       position: relative;
-      padding: 8rem 2rem;
+      padding: 5rem 2rem;
       text-align: center;
       background: var(--dark);
       overflow: hidden;
@@ -560,7 +560,7 @@
     .cta-btn:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
 
     /* ── TESTIMONIALS ── */
-    .testimonials { background: var(--ivory); padding: 6rem 2rem; }
+    .testimonials { background: var(--ivory); padding: 4rem 2rem; }
     .testimonials-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -609,7 +609,7 @@
     }
 
     /* ── CONTACT ── */
-    .contact { padding: 7rem 2rem; background: #fff; }
+    .contact { padding: 4rem 2rem; background: #fff; }
     .contact-inner {
       max-width: 1000px;
       margin: 0 auto;
@@ -708,11 +708,21 @@
     }
     .proof-stars { color: var(--gold-lt); font-size: 0.7rem; letter-spacing: 0.2em; }
     .proof-bar strong { color: var(--gold-lt); font-weight: 400; }
+    @media (max-width: 860px) {
+      .proof-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem 1rem;
+        padding: 1.2rem 1.5rem;
+        font-size: 0.78rem;
+      }
+      .proof-item { justify-content: center; }
+    }
 
     /* ── HOW IT WORKS ── */
     .how-it-works {
       background: var(--blush);
-      padding: 6rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
     }
     .steps-grid {
@@ -795,7 +805,7 @@
     /* ── INSTAGRAM SECTION ── */
     .insta-section {
       background: var(--ivory);
-      padding: 5rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
     }
     .insta-preview-grid {
@@ -853,7 +863,7 @@
     /* ── FAQ ── */
     .faq-section {
       background: #fff;
-      padding: 6rem 2rem;
+      padding: 4rem 2rem;
     }
     .faq-list {
       max-width: 760px;
