@@ -690,33 +690,50 @@
 
     /* ── SOCIAL PROOF BAR ── */
     .proof-bar {
-      background: var(--dark);
-      color: #e8ddd5;
+      background: var(--ivory);
+      border-top: 1px solid rgba(184,149,90,0.2);
+      border-bottom: 1px solid rgba(184,149,90,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-      padding: 1.1rem 2rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
+      gap: 0;
+      padding: 0;
     }
     .proof-item {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.35rem;
+      padding: 1.6rem 2.5rem;
+      flex: 1;
+      border-left: 1px solid rgba(184,149,90,0.18);
+      max-width: 240px;
     }
-    .proof-stars { color: var(--gold-lt); font-size: 0.7rem; letter-spacing: 0.2em; }
-    .proof-bar strong { color: var(--gold-lt); font-weight: 400; }
+    .proof-item:last-child { border-left: none; }
+    .proof-stars {
+      color: var(--gold);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+    }
+    .proof-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .proof-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      font-weight: 300;
+      text-align: center;
+    }
     @media (max-width: 860px) {
-      .proof-bar {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.9rem 1rem;
-        padding: 1.2rem 1.5rem;
-        font-size: 0.78rem;
-      }
-      .proof-item { justify-content: center; }
+      .proof-bar { display: grid; grid-template-columns: 1fr 1fr; }
+      .proof-item { max-width: 100%; border-bottom: 1px solid rgba(184,149,90,0.18); padding: 1.2rem 1rem; }
+      .proof-item:nth-child(odd) { border-left: none; }
+      .proof-item:nth-child(3), .proof-item:nth-child(4) { border-bottom: none; }
     }
 
     /* ── HOW IT WORKS ── */
@@ -1018,11 +1035,21 @@
   <div class="proof-bar">
     <div class="proof-item">
       <span class="proof-stars">✦ ✦ ✦ ✦ ✦</span>
-      <span><strong>דירוג מושלם</strong> מכל הכלות</span>
+      <span class="proof-num">5.0</span>
+      <span class="proof-label">דירוג מושלם</span>
     </div>
-    <div class="proof-item">💍 <span>יותר מ<strong>200 כלות</strong> מרוצות</span></div>
-    <div class="proof-item">📍 <span>סטודיו ב<strong>קריית מוצקין</strong></span></div>
-    <div class="proof-item">✂ <span><strong>התאמה אישית</strong> לכל גוף וסגנון</span></div>
+    <div class="proof-item">
+      <span class="proof-num">200+</span>
+      <span class="proof-label">כלות מרוצות</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-num">10+</span>
+      <span class="proof-label">שנות ניסיון</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-num">100%</span>
+      <span class="proof-label">התאמה אישית</span>
+    </div>
   </div>
 
   <!-- HOW IT WORKS -->
