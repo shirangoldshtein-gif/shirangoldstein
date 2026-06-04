@@ -122,7 +122,6 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto 1fr;
@@ -131,18 +130,16 @@
 
     .hero-visual {
       position: relative;
+      overflow: hidden;
       background: #ede3da;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
       min-height: 500px;
     }
     .hero-visual img {
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
       object-fit: contain;
       object-position: center top;
-      display: block;
     }
     /* soft vignette overlay */
     .hero-visual::after {
